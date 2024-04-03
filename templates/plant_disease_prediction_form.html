@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/disease.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+    function displayInformation() {
+            var information = "This is your Plant Leaf Disease Prediction section. Please upload your desired image and submit for results with 80% accuracy. Click 'OK' to proceed.";
+            alert(information);
+        }
+        // Add these scripts to your existing JavaScript
+function openModal() {
+    document.getElementById('modalOverlay').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').style.display = 'none';
+}
+</script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">CropCrafters</a>
+      <div class="social-media">
+          <a href="#"><i class='bx bxl-twitter'></i></a>
+          <a href="#"><i class='bx bxl-facebook-square'></i></a>
+          <a href="#"><i class='bx bxl-instagram'></i></a>
+          <a href="#"><i class='bx bxl-telegram'></i></a>
+      </div>
+      <nav class="navbar">
+          <a href="/home">Back Home</a>
+      </nav>
+  </header>
+  <br><br>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <p>This is your Plant Leaf Disease Prediction section. Please upload your desired image and submit for results with 80% accuracy. Click 'OK' to proceed.</p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+  <h1 class="heading"><font color=black>Know Your </font><span> Plant Disease</span>
+    <button onclick="openModal()" class="info">?</button>
+</h1>    
+<section class="info1">
+   <p>Ignoring a sick plant is like overlooking a sniffle that escalates into pneumonia. 
+    Untreated diseases act like insidious thieves, robbing your crops of vitality, yield, 
+    and even life. Blighted leaves, misshapen fruits, and stunted growth are not mere blemishes; 
+    they're battle cries from your plants, begging for intervention. Left unchecked, these diseases
+     can spread like wildfire, decimating entire fields and threatening the very livelihood of farmers.</p> 
+<p>
+    <center><img src="{{ url_for('static', filename='style/info2.png') }}" style="padding: 35px 35px;border:2px solid green;margin-top: 45px;margin-bottom: 35px;"></center>
+    <p>But here's where our website becomes your knight in shining armor. 
+        Our cutting-edge disease prediction system, honed on years of agricultural data 
+        and powered by a robust AI, acts as your personal oracle. Simply input your crop,
+         location, and weather patterns, and watch as the system analyzes millions of data
+          points to predict potential ailments with an astonishing 81% accuracy. It's like 
+          having a watchful eye trained on your fields, detecting even the faintest hint of 
+          trouble before it blossoms into full-blown disaster. Early detection is the key to 
+          successful treatment, and armed with our system's insights, you can take swift action, 
+          applying targeted interventions to nip disease in the bud and safeguard your precious harvest.
+           Remember, neglecting a sick plant is akin to gambling with your future.
+            Choose informed protection, choose our prediction system, and watch your crops thrive under the watchful gaze of technology.</p>
+</p>
+<h4>TRY NOW</h4>
+
+
+
+</section>
+  <div class="inputs">
+    <form method="post" action="/predict" enctype="multipart/form-data">
+          <label for="file">Choose a plant image:</label>
+          <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png" required>
+          <input type="submit" value="Predict"></input>
+      </form>
+  </div>
+
+    <br><br>
+<!---footer--->
+<section class="footer">
+    <a href="/home" class="logo">CropCrafters</a>
+    <p>-------------- Yielding Joys --------------<br>
+        <p>&copy; All rights reserved CHRIST (Deemed to be University), Department of Statistics and Data Science</p>
+        <br>
+        <a href="/policies"><p>Terms and Policies</p></a>
+        <br>
+        <div class="icons">
+    <a href="https://christuniversity.in/"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/christ_university_bangalore/?hl=en"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/school/christ-university-bangalore/?originalSubdomain=in"><i class="fa fa-linkedin"></i></a>
+</div>
+<b><div class="name"><p>Made with  <i class="fa fa-heart-o"></i> by Asmita Mondal</p></div></b>
+        </section>
+</body>
+</html>

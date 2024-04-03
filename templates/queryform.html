@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/first.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Contact Form</title>
+    <style>
+        .error {
+            color: rgb(250, 246, 246);
+        }
+    </style>
+        {% if alert_message %}
+        <script>
+            alert("{{ alert_message }}");
+            window.location.href = "{{ url_for('contact') }}";  // Reload the contact page
+        </script>
+    {% endif %}
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">CropCrafters</a>
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-telegram'></i></a>
+        </div>
+        <nav class="navbar">
+            <a href="/home">Back Home</a>
+        </nav>
+    </header>
+    <h1 class="heading"><font color=black>Submit Your </font><span> Query</span>
+    </h1>
+    <div class="inputs1">
+        <form id="contactForm" onsubmit="return validateForm()" action="/contact" method="POST">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <span id="nameError" class="error"></span>
+            <br>
+        
+            <input type="number" id="age" name="age" placeholder="Age" required>
+            <span id="ageError" class="error"></span>
+            <br>
+        
+            <input type="text" id="location" name="location" placeholder="Location" required>
+            <span id="locationError" class="error"></span>
+            <br>
+        
+            <input type="number" id="pin" name="pin" placeholder="Pin Code" required>
+            <span id="pinError" class="error"></span>
+            <br>
+        
+            <input type="text" id="state" name="state" placeholder="State" required>
+            <span id="stateError" class="error"></span>
+            <br>
+        
+            <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+            <span id="phoneError" class="error"></span>
+            <br><br>
+        
+            <select id="typeOfFarming" name="typeOfFarming" required>
+              <option value="">Select Type of Farming</option>
+              <option value="organic">Organic</option>
+              <option value="conventional">Conventional</option>
+              <option value="sustainable">Sustainable Farming</option>
+              <option value="regenerative">Regenerative Agriculture</option>
+              <option value="permaculture">Permaculture</option>
+              <option value="precision">Precision Farming</option>
+              <option value="agroforestry">Agroforestry</option>
+              <option value="aquaponics">Aquaponics</option>
+              <option value="vertical">Vertical Farming</option>
+              <option value="hydroponics">Hydroponics</option>
+              <option value="ipm">Integrated Pest Management (IPM)</option>
+              <option value="no-till">No-Till Farming</option>
+              <option value="urban">Urban Farming</option>
+              <option value="csa">Community Supported Agriculture (CSA)</option>
+          </select>
+            <span id="typeOfFarmingError" class="error"></span>
+            <br><br>
+        
+            <label>Preferred Contact Method:</label><br>
+            <input type="radio" id="sms" name="contactMethod" value="I want a solution via SMS" required>
+            <label for="sms">I want a solution via SMS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="call" name="contactMethod" value="I want a solution via call" required>
+            <label for="Icall">I want a solution via call</label>
+            <span id="contactMethodError" class="error"></span>
+            <br><br>
+        
+            <textarea id="query" name="query" rows="4" cols="100" placeholder="Type Your Query Here" required></textarea>
+            <span id="queryError" class="error"></span>
+            <br>
+        
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+<!---footer--->
+<section class="footer">
+    <a href="/home" class="logo">CropCrafters</a>
+    <p>-------------- Yielding Joys --------------<br>
+        <p>&copy; All rights reserved CHRIST (Deemed to be University), Department of Statistics and Data Science</p>
+        <br>
+        <a href="/policies"><p>Terms and Policies</p></a>
+        <br>
+        <div class="icons">
+    <a href="https://christuniversity.in/"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/christ_university_bangalore/?hl=en"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/school/christ-university-bangalore/?originalSubdomain=in"><i class="fa fa-linkedin"></i></a>
+</div>
+<b><div class="name"><p>Made with  <i class="fa fa-heart-o"></i> by Asmita Mondal</p></div></b>
+        </section>
+<script>
+    function validateForm() {
+        resetErrors();
+
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var location = document.getElementById("location").value;
+        var pin = document.getElementById("pin").value;
+        var state = document.getElementById("state").value;
+        var phone = document.getElementById("phone").value;
+        var typeOfFarming = document.getElementById("typeOfFarming").value;
+        var contactMethod = document.querySelector('input[name="contactMethod"]:checked');
+        var query = document.getElementById("query").value;
+
+        var isValid = true;
+
+        // Name validation
+        if (!/^[a-zA-Z\s]+$/.test(name)) {
+            document.getElementById("nameError").innerText = "Name cannot have numerics or special characters";
+            isValid = false;
+        }
+
+        // Age validation
+        if (isNaN(age) || age < 5 || age > 100) {
+            document.getElementById("ageError").innerText = "Age must be between 5 and 100";
+            isValid = false;
+        }
+
+
+        // location validation
+        if (isNaN(pin) || pin.length !== 6) {
+            document.getElementById("locationError").innerText = "Give proper Location Name";
+            isValid = false;
+        }
+
+        // Pin validation
+        if (isNaN(pin) || pin.length !== 6) {
+            document.getElementById("pinError").innerText = "Invalid pin code (6 digits only)";
+            isValid = false;
+        }
+
+        // State validation
+        if (!/^[a-zA-Z\s]+$/.test(state)) {
+            document.getElementById("stateError").innerText = "State must be proper";
+            isValid = false;
+        }
+
+        // Phone validation
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+            document.getElementById("phoneError").innerText = "Phone Number must have 10 digits starting between 6-9";
+            isValid = false;
+        }
+
+        // Type of farming validation
+        if (typeOfFarming === "") {
+            document.getElementById("typeOfFarmingError").innerText = "Please select type of farming";
+            isValid = false;
+        }
+
+        // Preferred contact method validation
+        if (!contactMethod) {
+            document.getElementById("contactMethodError").innerText = "Please select preferred contact method";
+            isValid = false;
+        }
+
+        // Query validation
+        if (query === "") {
+            document.getElementById("queryError").innerText = "Query cannot be empty";
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    function resetErrors() {
+        var errorElements = document.getElementsByClassName("error");
+        for (var i = 0; i < errorElements.length; i++) {
+            errorElements[i].innerText = "";
+        }
+    }
+</script>
+
+</body>
+</html>

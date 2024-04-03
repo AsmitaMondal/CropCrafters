@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static',filename='style/prdiction_css.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">CropCrafters</a>
+      <div class="social-media">
+          <a href="#"><i class='bx bxl-twitter'></i></a>
+          <a href="#"><i class='bx bxl-facebook-square'></i></a>
+          <a href="#"><i class='bx bxl-instagram'></i></a>
+          <a href="#"><i class='bx bxl-telegram'></i></a>
+      </div>
+      <nav class="navbar">
+          <a href="/Predict">Back To Form</a>
+      </nav>
+  </header>
+  <br><br>
+  <center>
+    <div class="predicted">
+      <div class="display">
+        <h4 class="statement">Leaf Condition</h4>
+        <br>
+        <br>
+        <h4 class="answer1">{{prediction}}</h4>
+      </div>
+  
+      <br><br>
+    </div>
+  </center>
+
+   
+    <!---footer--->
+    <section class="footer">
+      <a href="/home" class="logo">CropCrafters</a>
+      <p>-------------- Yielding Joys --------------<br>
+          <p>&copy; All rights reserved CHRIST (Deemed to be University), Department of Statistics and Data Science</p>
+          <br>
+          <a href="/policies"><p>Terms and Policies</p></a>
+          <br>
+          <div class="icons">
+      <a href="https://christuniversity.in/"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/christ_university_bangalore/?hl=en"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/school/christ-university-bangalore/?originalSubdomain=in"><i class="fa fa-linkedin"></i></a>
+  </div>
+  <b><div class="name"><p>Made with  <i class="fa fa-heart-o"></i> by Asmita Mondal</p></div></b>
+          </section> 
+  </body>
+</html>

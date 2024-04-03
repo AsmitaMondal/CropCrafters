@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommender</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style/first.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+function validateForm() {
+    var nitrogen = parseFloat(document.getElementById('Nitrogen').value);
+    var phosphorus = parseFloat(document.getElementById('Phosphorus').value);
+    var potassium = parseFloat(document.getElementById('Potassium').value);
+    var temperature = parseFloat(document.getElementById('Temperature').value);
+    var humidity = parseFloat(document.getElementById('Humidity').value);
+    var ph = parseFloat(document.getElementById('ph').value);
+    var rainfall = parseFloat(document.getElementById('Rainfall').value);
+
+    if (isNaN(nitrogen) || isNaN(phosphorus) || isNaN(potassium) || isNaN(temperature) || isNaN(humidity) || isNaN(ph) || isNaN(rainfall)) {
+        showAlert("Please enter numeric values for all fields.");
+        return false;
+    }
+
+    if (nitrogen < 0 || phosphorus < 0 || potassium < 0 || temperature < 0 || humidity < 0 || ph < 0 || rainfall < 0) {
+        showAlert("All values should be positive.");
+        return false;
+    }
+
+    if (ph < 0 || ph > 14) {
+        showAlert("pH should be in the range 0-14.");
+        return false;
+    }
+
+    if (temperature < 0 || temperature > 100) {
+        showAlert("Temperature should be in the range 0-100.");
+        return false;
+    }
+
+    return true;
+}
+
+function showAlert(message) {
+    alert(message);
+}
+function displayInformation() {
+            var information = "This is your Crop Recommendation section. Please enter the required values for Nitrogen, Phosphorus, Potassium, Temperature, Humidity, pH, and Rainfall. Make sure to provide numeric values and follow the specified ranges. Click 'OK' to proceed.";
+            alert(information);
+        }
+        // Add these scripts to your existing JavaScript
+function openModal() {
+    document.getElementById('modalOverlay').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').style.display = 'none';
+}
+
+    </script>
+    
+    
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">CropCrafters</a>
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-telegram'></i></a>
+        </div>
+        <nav class="navbar">
+            <a href="/home">Back Home</a>
+        </nav>
+    </header>
+    <br><br>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <p>This is your Crop Recommendation section. Please enter the required values for Nitrogen, Phosphorus, Potassium, Temperature, Humidity, pH, and Rainfall. Make sure to provide numeric values and follow the specified ranges.</p>
+            <button onclick="closeModal()">OK</button>
+        </div>
+    </div>
+    <h1 class="heading"><font color=black>Get Your </font><span>Crop Recommendation </span>
+        <button onclick="openModal()" class="info">?</button>
+    </h1>
+ <section class="info1">
+    <p>Understanding the intricate dance between nitrogen, potassium, phosphorus, temperature,
+         humidity, rainfall, and pH is like deciphering the secret language of your crops. 
+         Each factor plays a vital role in their health, influencing everything from leafy 
+         growth to robust roots and juicy harvests. A farmer armed with this knowledge is a maestro, 
+         capable of tuning the orchestra of his fields for a symphony of abundance.</p>
+<center><img src="{{ url_for('static', filename='style/info1.png') }}" style="padding: 35px 35px;border:2px solid green;margin-top: 45px;margin-bottom: 35px;"></center>
+      <p> But why simply listen to your crops when you can have them whisper their deepest desires 
+        directly into your ear? Our recommendation system is a dedicated agricultural oracle, ready 
+        to interpret your every input – your soil type, local climate, past harvests, and even your 
+        farming goals. Tell us your dreams of plump tomatoes basking in the sun, or sturdy carrots
+         burrowing through rich earth, and we'll weave a tapestry of personalized suggestions. From 
+         ideal planting times to optimal nutrient blends, our algorithm will become your agricultural 
+         confidante, guiding you towards a flourishing future one harvest at a time. So, step onto the 
+         fertile stage of our website, let your crops have their say, and watch your agricultural dreams blossom into reality.</p> 
+ <br>
+ <h4>TRY NOW</h4>
+       
+        
+ </section>
+    <div class="inputs">
+        <form action="form" method="post" onsubmit="return validateForm()">
+            <input type="text" id="Nitrogen" name="Nitrogen" placeholder="Nitrogen" required>
+    <br>
+            <input type="text" id="Phosphorus" name="Phosphorus" placeholder="Phosphorus" required>
+            <br>
+
+            <input type="text" id="Potassium" name="Potassium" placeholder="Potassium" required>
+            <br>
+
+            <input type="text" id="Temperature" name="Temperature" placeholder="Temperature in Degree Celcius" required>
+            <br>
+
+            <input type="text" id="Humidity" name="Humidity" placeholder="Relative Humidity in Percentage" required>
+            <br>
+
+            <input type="text" id="ph" name="ph" placeholder="ph should be in between 0-14" required>
+            <br>
+
+            <input type="text" id="Rainfall" name="Rainfall" placeholder="Rainfall in MM" required>
+            <br>
+
+            <input type="submit" id="submit" name="submit" value="Predict Your Crop">
+        </form>
+    </div>
+    <br><br>
+    <!---footer--->
+    <section class="footer">
+        <a href="/home" class="logo">CropCrafters</a>
+        <p>-------------- Yielding Joys --------------<br>
+            <p>&copy; All rights reserved CHRIST (Deemed to be University), Department of Statistics and Data Science</p>
+            <br>
+            <a href="/policies"><p>Terms and Policies</p></a>
+            <br>
+            <div class="icons">
+        <a href="https://christuniversity.in/"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/christ_university_bangalore/?hl=en"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/school/christ-university-bangalore/?originalSubdomain=in"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <b><div class="name"><p>Made with  <i class="fa fa-heart-o"></i> by Asmita Mondal</p></div></b>
+            </section>   
+</body>
+</html>

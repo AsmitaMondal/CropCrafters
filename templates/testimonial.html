@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style/testimonial.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">CropCrafters</a>
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-telegram'></i></a>
+        </div>
+        <nav class="navbar">
+            <a href="/home">Back Home</a>
+        </nav>
+    </header>
+    <section class="testimonial">
+        <h1 class="heading"><font color=black>View Our </font><span>Testimonials </span></h1>
+        <div class="rows">
+            {% for testimonial in testimonials %}
+                <div class="test">
+                    <div class="para">
+                        <p>{{ testimonial.name }}<br>
+                        <i class="fa fa-star" aria-hidden="true"></i> {{ testimonial.rating }} / 5<br>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="para1">
+                        <p>{{ testimonial.message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <br><br>
+    <!---footer--->
+    <section class="footer">
+        <a href="/home" class="logo">CropCrafters</a>
+        <p>-------------- Yielding Joys --------------<br>
+            <p>&copy; All rights reserved CHRIST (Deemed to be University), Department of Statistics and Data Science</p>
+            <br>
+            <a href="/policies"><p>Terms and Policies</p></a>
+            <br>
+            <div class="icons">
+                <a href="https://christuniversity.in/"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/christ_university_bangalore/?hl=en"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/christ-university-bangalore/?originalSubdomain=in"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <b><div class="name"><p>Made with  <i class="fa fa-heart-o"></i> by Asmita Mondal</p></div></b>
+    </section>
+</body>
+</html>

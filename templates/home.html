@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{url_for('static', filename='style/home.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CropCrafters</title>
+    {% if alert_message %}
+    <script>
+        alert("{{ alert_message }}");
+        window.location.href = "{{ url_for('formsubmit') }}";  
+    </script>
+{% endif %}
+
+</head>
+<body>
+    <header class="header">
+        <a href="/home" class="logo">CropCrafters</a>
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-telegram'></i></a>
+        </div>
+        <nav class="navbar">
+            <a href="#intro">About</a>
+            <a href="/Recommend">Recommandation</a>
+            <a href="/Predict">Predict</a>
+            <a href="/query">Query</a>
+            <a href="#testimonial">Testimonials</a>
+            <a href="#contact11">Contact</a>
+        </nav>
+    </header>
+    <section class="banner">
+        <div class="slider">
+            <div class="slide active">
+                <img src="{{ url_for('static', filename='style/bg4.jpg') }}" alt="">
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Thr</h1>
+                    </div>
+                    <div class="content">
+                       <h3>01. Cultivate Easily</h3> 
+                       <p>Provide the optimal conditions for your crops to grow vigorously.
+                        Ensure a robust and healthy crop cycle with tailored support.
+                        Witness your agricultural endeavors thrive, embracing sustainable practices.
+                       </p>
+                       <a href="/knowmore" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>ive</h1>
+                    <h3>In Peace</h3>
+
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="{{ url_for('static', filename='style/bg6.jpg') }}" alt="">
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Har</h1>
+                    </div>
+                    <div class="content">
+                       <h3>02. Maximize Produce</h3> 
+                       <p>Reap the fruits of your labor, celebrating a season of hard work.
+                        Gather the bounty, marking the culmination of a successful cultivation journey.
+                        Enjoy the satisfaction of a plentiful harvest, the tangible result of dedication.
+                       </p>
+                       <a href="/knowmore" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>vest</h1>
+                    <h3>With Love</h3>
+
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="{{ url_for('static', filename='style/bg3.jpg') }}" alt="">
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Flou</h1>
+                    </div>
+                    <div class="content">
+                       <h3>03. Experience Abundance</h3> 
+                       <p>Create an environment where plants flourish naturally and abundantly.
+                        Cultivate a diverse ecosystem, allowing each element to thrive and coexist.
+                        See your agricultural landscape flourish, a testament to sustainable practices.
+                       </p>
+                       <a href="/knowmore" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>rish</h1>
+                    <h3>In Life</h3>
+
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="{{ url_for('static', filename='style/bg11.jpg') }}" alt="">
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Culti</h1>
+                    </div>
+                    <div class="content">
+                       <h3>04. Understand Your Environment</h3> 
+                       <p>Tend to the land with care, sowing the seeds of future abundance.
+                        Foster a nurturing environment, where each plant receives individual attention.
+                        Watch as your efforts blossom, cultivating a thriving ecosystem.
+                       </p>
+                       <a href="/knowmore" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>vate</h1>
+                    <h3>With Passion</h3>
+
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="{{ url_for('static', filename='style/bg1.jpg') }}" alt="">
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Pros</h1>
+                    </div>
+                    <div class="content">
+                       <h3>05. Achieve Success</h3> 
+                       <p>Support the prosperity of your farm through informed decision-making.
+                        Embrace innovation and technology to enhance agricultural prosperity.
+                        Achieve long-term success as your farm prospers with sustainable practices.
+                       </p>
+                       <a href="/knowmore" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>per</h1>
+                    <h3>With Money</h3>
+
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+          <span class="prev-btn"><i class='bx bx-chevron-left'></i></span>
+          <span class="next-btn"><i class='bx bx-chevron-right' ></i></span>   
+        </div>
+    </section>
+
+    <section class="intro" id="intro">
+        <h1 class="heading"><font color=black>Welcome To </font><span>CropCrafters </span></h1>
+    
+        <div class="row1">
+            <div class="video-container">
+                <video src="{{ url_for('static', filename='style/video.mp4') }}" loop autoplay muted></video>
+                <h5>yeilding joys</h5>
+            </div>
+    
+            <div class="content1">
+                <h4>About Us</h4>
+                <p><i>In fields of toil and sunlit grace,<br>
+                   Farmers sow hope in every trace. <br>
+                    Nature's stewards, strong and true,<br>
+                    Harvesting dreams that ever renew.</i></p>
+                <p><span>Embark on a transformative journey with CropCrafters </span><br><span> – where agriculture meets innovation. Uncover the secrets of smart farming</span><br>
+                     <span>through cutting-edge practices, predictive analytics, and tailored recommendations.</span><br>
+                     <span> Our platform empowers you with data-driven insights, fostering sustainable  <br></span>
+                      <span>and efficient farming.  Join us in reshaping the future of agriculture for a greener,<br> </span> 
+                      <span>healthier planet. CropCrafters: Nurturing the roots of smart, sustainable, <br></span>  
+                      <span>and successful farming practices. Your gateway to a revolutionized agricultural experience!<br></span> </p>
+                    <br><br>
+                    
+                
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <h1 class="heading"><font color=black>Our </font><span>Features </span></h1>
+        <div class="para">
+            <p>RECOMMENDER</p><p>ENQUIRY</p><p>PREDICTOR</p>
+        </div>
+        <div class="card__container">
+           <article class="card__article">
+              <img src="{{ url_for('static', filename='style/fe3.png') }}" alt="image" class="card__img">
+
+              <div class="card__data">
+                 <span class="card__description">CROP RECOMMENDATION</span>
+                 <h2 class="card__title">Input your soil conditions and get crop recommandation</h2>
+                 <a href="/Recommend" class="card__button">Try Now</a>
+              </div>
+           </article>
+
+           <article class="card__article">
+              <img src="{{ url_for('static', filename='style/fe2.png') }}" alt="image" class="card__img">
+
+              <div class="card__data">
+                 <span class="card__description">ASSISTANCE ZONE</span>
+                 <h2 class="card__title">Drop in your contact and get your issues resolved by experts</h2>
+                 <a href="/query" class="card__button">Try Now</a>
+              </div>
+           </article>
+
+           
+           <article class="card__article">
+            <img src="{{ url_for('static', filename='style/fe1.png') }}" alt="image" class="card__img">
+
+            <div class="card__data">
+               <span class="card__description">DISEASE PREDICTION</span>
+               <h2 class="card__title">Upload image of your plant and learn about its health</h2>
+               <a href="/Predict" class="card__button">Try Now</a>
+            </div>
+         </article>
+        </div>
+     </div>
+
+<!----testimonial--->
+<section class="contact" id="testimonial">
+    <h1 class="heading1">Valuable <span> Testimonials</span></h1>
+        <div class="guide">        
+            <div class="w">
+                <img src="{{ url_for('static', filename='style/f.png') }}" id="forw">
+                <div class="g">
+                    <div>
+                        <span><img src="{{ url_for('static', filename='style/t (4).png') }}" class="i2"></span> 
+                    </div>
+                    <div>
+                        <span><img src="{{ url_for('static', filename='style/t (3).png') }}" class="i2"></span> 
+                    </div>
+                    <div>
+                        <span><img src="{{ url_for('static', filename='style/t (2).png') }}" class="i2"></span> 
+                    </div>
+                    <div>
+                        <span><img src="{{ url_for('static', filename='style/t (1).png') }}" class="i2"></span> 
+                    </div>
+                    <div>
+                        <span><img src="{{ url_for('static', filename='style/t (5).png') }}" class="i2"></span> 
+                    </div>
+                    <div>
+                        <span><img src="{{ url_for('static', filename='style/t (6).png') }}" class="i2"></span> 
+                    </div>
+                                </div>
+                <img src="{{ url_for('static', filename='style/b.png') }}" id="backw">
+        
+            </div>  
+        </div>
+        <center>
+
+            <div class="row2">
+
+            <div class="testimonial">
+                <center><a href="/testimonial"><button class="btn">View More</button></a></center>
+                <br><br>
+
+                <div class="para">
+                    <p>SUBMIT YOUR REVIEW AND HELP US GET BETTER</p>
+                </div>
+                <br>
+                <div class="contact-us">
+                    <div class="row">
+
+                        <form action="/formsubmit" method="POST" onsubmit="return validateForm1()">
+                            <input type="text" placeholder="Name" class="box" id="name" name="name1" required>
+                            <input type="text" placeholder="Phone" class="box" id="phone" name="phone1" required>
+                            <input type="number" placeholder="Rating (Out of 5)" class="box" id="rating" name="rating">
+                            <textarea name="message" class="box" placeholder="Message" id="message" cols="20" rows="5" required></textarea>
+                            <center><input type="submit" value="Submit" class="btn2"></center>
+                        </form>
+                         
+                    </div>
+
+                </div>
+
+            </div>
+    
+        </center>
+
+    </div>
+</section>
+<br>
+<h1 class="heading" id="contact11"><font color=black>Contact </font><span>Us </span></h1>
+
+<section class="location">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5558789579045!2d77.6036138741369!3d12.936241415654447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b277a93807%3A0x88518f37b39dabd0!2sChrist%20University!5e0!3m2!1sen!2sin!4v1696309940795!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </section>
+<section class="contact-us">
+    <div class="row">
+        <div class="contact-col">
+            <div>
+                <i class="fa fa-id-card"></i>  
+                <span>
+                    <h5>Asmita Mondal (Manager)<br><a href="https://wa.me/7439690981">+91 7439690981</a></h5>
+                    <p><a href="mailto:asmita.mondal@msds.christuniversity.in">asmita.mondal@msds.christuniversity.in</a></p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-id-card-o"></i>  
+                <span>
+                    <h5>Shiladitya Sarkar (Developer)<br><a href="https://wa.me/7047841803">+91 7047841803</a></h5>
+                    <p><a href="mailto:shiladitya.sarkar@arts.christuniversity.in">shiladitya.sarkar@msaim.christuniversity.in</a></p>
+                </span>    
+            </div>
+            <div>
+                <i class="fa fa-id-card"></i>  
+                <span>
+                    <h5>Pratyusha Mahanty (Assistant)<br><a href="https://wa.me/9871785288">+91 9871785288</a>
+                        </h5>
+                    <p><a href="mailto:pratyusha.mahanty@msiam.christuniversity.in">pratyusha.mahanty@msaim.christuniversity.in</a></p>
+                </span> 
+            </div>
+           
+            
+    </div>
+    <div class="contact-col">
+        <div class="image">
+            <img src="{{ url_for('static', filename='style/filler1.jpg') }}" alt="">
+        </div>
+            </div>
+    </div>
+</section>
+
+<br>
+<!---footer--->
+<section class="footer">
+    <a href="/home" class="logo">CropCrafters</a>
+    <p>-------------- Yielding Joys --------------<br>
+        <p>&copy; All rights reserved CHRIST (Deemed to be University), Department of Statistics and Data Science</p>
+        <br>
+        <a href="/policies"><p>Terms and Policies</p></a>
+        <br>
+        <div class="icons">
+    <a href="https://christuniversity.in/"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/christ_university_bangalore/?hl=en"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/school/christ-university-bangalore/?originalSubdomain=in"><i class="fa fa-linkedin"></i></a>
+</div>
+<b><div class="name"><p>Made with  <i class="fa fa-heart-o"></i> by Asmita Mondal</p></div></b>
+        </section>
+
+
+
+    <script>
+        const nextBtn=document.querySelector ('.next-btn');
+        const prevBtn=document.querySelector ('.prev-btn');
+        const slides=document.querySelectorAll ('.slide');
+        const numberOfSlides=slides.length;
+        let slideNumber=0;
+
+        nextBtn.onclick=()=>{
+            slides.forEach((slide)=>{
+             slide.classList.remove('active');   
+            }
+            )
+
+
+            slideNumber++;
+            if(slideNumber>(numberOfSlides-1)){
+                slideNumber=0;
+            }
+            slides[slideNumber].classList.add('active');
+        }
+
+        prevBtn.onclick=()=>{
+            slides.forEach((slide)=>{
+             slide.classList.remove('active');   
+            }
+            )
+
+
+            slideNumber--;
+            if(slideNumber<0){
+                slideNumber=(numberOfSlides-1);
+            }
+            slides[slideNumber].classList.add('active');
+        }
+        function validateForm1() {
+        // Get form values
+        var name = document.getElementById("name").value;
+        var rating = document.getElementById("rating").value;
+        var phone = document.getElementById("phone").value;
+
+        // Name validation
+        if (!/^[a-zA-Z\s]+$/.test(name)) {
+            alert("Invalid characters in the Name field. Please use only alphabets and spaces.");
+            return false;
+        }
+
+        // Rating validation
+        if (isNaN(rating) || rating < 0 || rating > 5) {
+            alert("Invalid Rating. Please enter a number between 0 and 5.");
+            return false;
+        }
+
+        // Phone validation
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+            alert("Invalid Phone number. Please enter a valid 10-digit number starting with 6-9.");
+            return false;
+        }
+
+        // Form is valid
+        return true;
+    }
+
+    let cont=document.querySelector(".g");
+    let b=document.getElementById("backw");
+    let f=document.getElementById("forw");
+
+    cont.addEventListener("wheel",(evt)=>{
+        evt.preventDefault();
+        cont.scrollLeft+=evt.deltaY;
+
+    });
+    b.addEventListener("click",()=>{
+        cont.style.scrollBehavior="smooth";
+        cont.scrollLeft+=950;
+    });
+    f.addEventListener("click",()=>{
+        cont.style.scrollBehavior="smooth";
+        cont.scrollLeft-=950;
+    });
+    </script>
+</body>
+</html>
