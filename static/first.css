@@ -1,0 +1,281 @@
+body {
+    background-size: cover;
+    background-color: #e4dede66;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .heading{
+    text-align:center;
+    font-size:2.7rem;
+    color:#333;
+    padding:1rem;
+    margin:2rem 0;
+    border-bottom: 2px solid black;
+    border-top:2px solid black;
+    background-size:cover;
+
+}
+.heading span{
+    color:#025f10;
+    text-shadow: -2px -2px 2px white,0 5px 10px rgba(252, 251, 250, 0.895);
+
+}
+  form {
+    width: 500px;
+    height:400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-image: url(formbg3.jpg);
+    border-radius: 10px;
+    background-size: cover;
+  }
+  #contactForm{
+    width: 500px;
+    height:600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-image: url(formbg3.jpg);
+    border-radius: 10px; 
+  }
+  input {
+    background-color: #dbdfdc; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+  }
+  input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+
+  }
+  input[type="number"] {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+
+  }
+  #typeOfFarming {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #dbdfdc; 
+
+}
+
+#typeOfFarmingError {
+    color: #f8f5f5; 
+}
+
+#query {
+  width: 50%;
+  padding: 10px;
+  background-color: #dbdfdc; 
+  color:black;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+#query::placeholder {
+  font-weight: bold;
+}
+#queryError {
+  color: #fdfbfb; 
+}
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e2e5e2;
+    color: rgb(20, 20, 20);
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+
+    background-color: #080263;
+    color: rgb(248, 244, 244);
+    cursor: pointer;
+    border: 1px solid white;
+  }
+  input::placeholder {
+    color: #141414; 
+    font-weight: bold; 
+  }
+  
+  label {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #e2e5e2;
+  }
+
+
+    /*---footer---*/
+.footer{
+  width:100%;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgb(7, 161, 7);
+  background-color: #040404;
+}
+.footer h4{
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.footer p{
+  font-size: 11px;
+  color: #fffefe;
+}
+.icons .fa{
+  margin:0 10px;
+  cursor:pointer;
+  padding:12px 0;
+  text-decoration:none;
+}
+.fa-heart-o{
+  color:#f44336;
+}
+.logo1{
+  width:150px;
+  cursor:pointer;
+  padding-bottom: -20px;
+  justify-content: center;
+}
+.name p{
+  font-size: 16px;
+  font-family: Poppins;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bungee+Shade&family=Cabin+Sketch:wght@700&family=Caveat:wght@600;700&family=Chakra+Petch&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600;700&family=Yesteryear&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Montserrat', sans-serif ;
+}
+html {
+    scroll-behavior: smooth;
+  }
+.header{
+    top:0;
+    left:0;
+    width:100%;
+    padding:30px 5%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    z-index:100;
+    background-color: rgba(0, 0, 0, 0.967);
+}
+.logo{
+    font-size: 30px;
+    color:white;
+    text-decoration: none;
+    font-weight: 700;
+}
+.social-media{
+    margin: 0 auto 0 50px;   
+}
+.social-media a{
+    display: inline-flex;
+    width:40px;
+    height:40px;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    border:2px solid white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+.social-media a:hover{
+    background: white;
+}
+.social-media a i{
+    font-size: 20px;
+    color:white;
+}
+.social-media a:hover i{
+    color:#444;
+}
+.navbar a{
+    font-size:18px;
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left:30px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.inputs{
+  display: flex;
+  width:100%;
+  height:70vh;
+}
+.inputs1{
+  display: flex;
+  width:100%;
+  height:90vh;
+}
+/* Add these styles to your existing CSS */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.modal button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.info{
+  padding: 5px 5px;
+  background-color: #46f436;
+  cursor: pointer;
+}
+.info1{
+  padding-top: 20px;
+  margin: 20px 80px;
+}
+.info1 p{
+  padding-top: 10px;
+  font-size: 22px;
+}
+h4{
+  font-size:2rem;
+  color:#035713;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
