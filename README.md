@@ -1,6 +1,15 @@
 # CropCrafters 🪴
 #### This project was done as a part of the final project submission for the web development course in the university data science postgraduate degree. 🌐
 
+# About
+
+This comprehensive website integrates predictive crop analytics, intelligent disease detection, and a dedicated inquiry system to empower farmers and elevate farming practices into the digital era.
+
+# Vision and Impact:
+
+CropCrafters envisions a future where technology seamlessly integrates with traditional farming wisdom. By providing accessible and user-friendly tools,
+the platform aims to ensure food security, environmental sustainability, and economic prosperity for farming communities. CropCrafters stands as a beacon of transformation, redefining agriculture through innovation, community collaboration, and the convergence of traditional wisdom with modern technology.
+
 # Features 💖
 - Home Page
 - About Us Section
