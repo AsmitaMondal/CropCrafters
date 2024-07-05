@@ -58,7 +58,7 @@ the platform aims to ensure food security, environmental sustainability, and eco
 This was a self-built project and hence organization was done purely by myself for myself. In terms of development, the project breaks down into four pivotal components. 
 - **Firstly**, the overall look and feel were crafted using ``` HTML ```,``` CSS ```, and``` JavaScript ```. 
 - **Secondly**, machine learning algorithms were developed to empower the website with predictive functionalities. 
-- **Thirdly**, databases were established to store vital information, utilizing the ```XAMPP MySQL``` database. 
+- **Thirdly**, databases were established to store vital information, utilizing the ```XAMPP MySQL``` database powered by `SQLAlchemy`. 
 - **Lastly**, the integration of the backend was accomplished through ```Flask```, chosen for its ease of use and flexibility, resulting in a cohesive and efficient system that brings together all elements of the project. 
 
 
